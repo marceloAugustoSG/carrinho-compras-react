@@ -18,7 +18,7 @@ export default function Cart() {
                     </button>
                     2
                     <button className="bg-slate-600 px-2 rounded text-white font medium flex items-center justify-content">
-                        -
+                        +
                     </button>
 
                 </div>

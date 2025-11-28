@@ -22,6 +22,10 @@ export default function Home() {
         getProducts()
     }, [])
 
+    const formatPrice = (price: number) => {
+        return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    }
+
     return (
         <div>
             <main className="w-full max-w-7xl px-4 mx-auto">
@@ -34,7 +38,9 @@ export default function Home() {
                                 src={product.cover} alt="logo do produto" />
                             <p className="font-medium mt-2 mb-2">{product.title}</p>
                             <div className="flex gap-3 items-center">
-                                <strong className="text-zinc-700/90">{product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong>
+                                <strong>
+                                    {formatPrice(product.price)}
+                                </strong>
                                 <button className="bg-zinc-900 p-1 rounde">
                                     <BsCartPlus size={22} color="#fff" />
                                 </button>
